@@ -1,6 +1,6 @@
 {
   "name": "restful-service",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "General use RESTful store/adapter, intended for VueJS apps",
   "main": "store.js",
   "scripts": {
