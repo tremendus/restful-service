@@ -22,5 +22,8 @@
   "bugs": {
     "url": "https://github.com/tremendus/restful-service/issues"
   },
-  "homepage": "https://github.com/tremendus/restful-service#readme"
+  "homepage": "https://github.com/tremendus/restful-service#readme",
+  "dependencies": {
+    "superagent": "^1.8.3"
+  }
 }
