@@ -1,0 +1,26 @@
+{
+  "name": "restful-service",
+  "version": "0.0.0",
+  "description": "General use RESTful store/adapter, intended for VueJS apps",
+  "main": "store.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tremendus/restful-service.git"
+  },
+  "keywords": [
+    "rest",
+    "api",
+    "service",
+    "store",
+    "adapter"
+  ],
+  "author": "Darren Carter <darren@tremendusapps.com>",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/tremendus/restful-service/issues"
+  },
+  "homepage": "https://github.com/tremendus/restful-service#readme"
+}
