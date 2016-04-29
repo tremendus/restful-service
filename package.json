@@ -1,6 +1,6 @@
 {
   "name": "restful-service",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "General use RESTful store/adapter, intended for VueJS apps",
   "main": "lib/index.js",
   "scripts": {
@@ -24,6 +24,7 @@
   },
   "homepage": "https://github.com/tremendus/restful-service#readme",
   "dependencies": {
+    "log-service": "github:tremendus/log-service",
     "superagent": "^1.8.3"
   },
   "devDependencies": {
