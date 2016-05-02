@@ -2,7 +2,9 @@ import request from 'superagent'
 // import config from '../configuration/adapter'
 import LogService from 'log-service'
 
-const config = {}
+const config = {
+  host: 'http://localhost:3333'
+}
 const logger = new LogService({ label: 'adapter', silent: 0 })
 
 function error (err) {
