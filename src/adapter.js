@@ -27,7 +27,7 @@ export function readOne (model, id, opts = {}) {
 
 export function readMany (model, query, opts = {}) {
   const route = opts.url || ['api', model, 'query'].join('/')
-  const send = opts
+  const send = { data: opts }
   logger.log('readMany()', send)
   return action(route, 'post', send)
 }
