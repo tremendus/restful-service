@@ -20,7 +20,7 @@ export function create (model, data, opts = {}) {
 
 export function readOne (model, id, opts = {}) {
   const route = opts.url || ['api', model, id].join('/')
-  const send = { data: opts }
+  const send = { query: opts }
   logger.log('read()', send)
   return action(route, 'get', send)
 }
