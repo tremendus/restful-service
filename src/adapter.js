@@ -7,8 +7,27 @@ const config = {
 }
 const logger = new LogService({ label: 'adapter', silent: 0 })
 
-function error (err) {
-  logger.error('handledError', err)
+function handleError (err, route, method, opts) {
+  const message = errorMessage(err, method)
+  logger.error('handleError()', err, message)
+}
+
+function errorMessage(err, method) {
+  let message = ''
+  switch (method) {
+    case 'get':
+      message = 'Failed to fetch data from the server'
+    case 'patch':
+      message = 'Failed to update record on the server'
+    case 'put':
+      message = 'Failed to update record on the server'
+    case 'delete':
+      message = 'Failed to delete record from the server'
+    default:
+      message = 'Failed to communicate with the server or there was an error on the server'
+  }
+  logger.log('errorMessage()', method, message)
+  return message
 }
 
 export function create (model, data, opts = {}) {
@@ -52,6 +71,13 @@ export function action (route, method = 'get', opts = {}) {
     request[method](url)
       .query(opts.query)
       .send(opts.data)
-      .end((err, res) => { err ? reject(err) : resolve(res.body) })
-  }).catch(error)
+      .end((err, res) => { 
+        if (err) {
+          handleError(err, route, method, opts)
+          reject({})
+          return
+        } 
+        resolve(res.body)
+      })
+  }).catch(handleError)
 }
